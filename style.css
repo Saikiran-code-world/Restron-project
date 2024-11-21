@@ -1,0 +1,669 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+:root {
+  --primary: #fea116;
+  --light: #f1f8ff;
+  --dark: #0f172b;
+}
+.main {
+  background-color: var(--light);
+  height: 100%;
+  width: 100%;
+}
+.child {
+  width: 87%;
+  margin: auto;
+  background-color: white;
+}
+.check {
+  display: none;
+}
+.label {
+  display: none;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  border: 1.5px solid;
+  text-align: center;
+  cursor: pointer;
+  color: #fea116;
+  position: relative;
+}
+.menu-items {
+  display: flex;
+  gap: 1rem;
+}
+.menu-items a {
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.menu-items a:hover {
+  color: var(--light);
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav > div > a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 3rem;
+}
+.child1 {
+  background-color: var(--dark);
+  padding: 0 2rem;
+}
+
+#check:checked + label + .menu-items {
+  display: block;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  left: 0%;
+  width: 100%;
+  background-color: var(--dark);
+  text-align: center;
+  color: black;
+}
+
+@media screen and (max-width: 1150px) {
+  .menu-items {
+    display: none; /* Hide menu items on small screens by default */
+  }
+  #check:checked ~ .menu-items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    width: 100%;
+    background-color: var(--dark);
+    text-align: center;
+  }
+  .menu-items {
+    display: flex;
+    gap: 1rem;
+    display: none;
+  }
+  .menu-items a {
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    gap: 2rem;
+  }
+  .menu-items a:hover {
+    color: var(--light);
+    background-color: var(--primary);
+    border-radius: 4px;
+  }
+  .label {
+    display: block; /* Show hamburger menu icon on smaller screens */
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .child {
+    width: 100%;
+  }
+}
+
+.child1 > :nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+}
+.child1 > :nth-child(2) > :nth-child(2) > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.child1 > :nth-child(2) > :nth-child(1) {
+  color: var(--light);
+  align-content: center;
+}
+.child1 > :nth-child(2) {
+  margin-top: 20vh;
+  padding-bottom: 20vh;
+}
+.child1 > :nth-child(2) > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 10vh;
+}
+.child1 > :nth-child(2) > :nth-child(1) > :nth-child(1) {
+  font-size: 4.5rem;
+  line-height: 1.3;
+}
+.child1 > :nth-child(2) > :nth-child(1) > :nth-child(2) {
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+}
+.child1 > :nth-child(2) > :nth-child(1) > :nth-child(3) {
+  padding: 0.6rem 1.5rem 0.6rem 1.5rem;
+  background-color: var(--primary);
+  width: 35%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.05rem;
+}
+.child1 > :nth-child(2) > :nth-child(1) > :nth-child(3):hover {
+  filter: brightness(0.8);
+}
+.child1 > :nth-child(2) > :nth-child(2) > img {
+  animation: rotate 30s ease-in infinite forwards;
+  transform: rotate(360deg);
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .child1 > :nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+  }
+  .child1 > :nth-child(2) > :nth-child(1) > :nth-child(3) {
+    align-self: center;
+    margin-bottom: 10vh;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .child1 > :nth-child(2) > :nth-child(2) > img {
+    display: inline-block;
+    height: 100%;
+  }
+}
+
+/* child 2 */
+.child2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 10vh !important;
+  padding-bottom: 10vh !important;
+  padding: 1.5rem;
+  gap: 2rem;
+  background-color: white;
+}
+.child2 > div {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: 0.4s;
+}
+.child2 > div:hover {
+  color: white;
+  background-color: #fea116;
+}
+.child2 > div > :nth-child(1) {
+  color: #fea116;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+.child2 > div > :nth-child(1):hover {
+  color: white;
+}
+.child2 > div > :nth-child(2) > :nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 600;
+  vertical-align: top;
+  letter-spacing: 0.05rem;
+  line-height: 1.3rem;
+}
+.child2 > div > :nth-child(2) > :nth-child(2) {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.05;
+}
+@media screen and (max-width: 1150px) {
+  .child2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 650px) {
+  .child2 {
+    grid-template-columns: 1fr;
+  }
+}
+/* child3 */
+.child3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0vh 4vh;
+  margin-top: 20vh;
+}
+.child3 > :nth-child(1) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.child3 > :nth-child(2) {
+  padding: 1.5rem;
+  margin-top: 5vh;
+}
+.child3 > :nth-child(1) > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.child3 > :nth-child(1) > :nth-child(2) > img,
+.child3 > :nth-child(1) > :nth-child(3) > img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+}
+.child3 > :nth-child(1) > :nth-child(2) {
+  align-self: end;
+}
+.child3 > :nth-child(1) > :nth-child(3) {
+  text-align: end;
+}
+.child3 > :nth-child(2) > div {
+  display: flex;
+  gap: 10vw;
+  margin-left: 15vh;
+  margin-top: 5vh;
+}
+.child3 > :nth-child(2) > div > div > :nth-child(1) {
+  color: grey;
+  font-size: 0.99rem;
+  position: relative;
+}
+.child3 > :nth-child(2) > div > :nth-child(1) > :nth-child(1)::before {
+  content: "|15";
+  position: absolute;
+  left: -90%;
+  top: -50%;
+  font-size: 3rem;
+  color: #fea116;
+}
+.child3 > :nth-child(2) > div > :nth-child(2) > :nth-child(1)::before {
+  content: "|50";
+  position: absolute;
+  left: -70%;
+  top: -50%;
+  font-size: 3rem;
+  color: #fea116;
+}
+.child3 > :nth-child(2) > div > div > :nth-child(2) {
+  font-size: 1.05rem;
+  margin-top: -2.5vh;
+  font-weight: 600;
+}
+.child3 > :nth-child(2) > :nth-child(6) {
+  font-size: 1.2rem;
+  padding: 01rem 1.5rem;
+  background-color: #fea116;
+  width: 35%;
+  text-align: center;
+  color: #f1f8ff;
+  transition: 0.3s ease;
+  margin-top: 5vh;
+  cursor: pointer;
+}
+.child3 > :nth-child(2) > :nth-child(6):hover {
+  filter: brightness(0.85);
+}
+.child3 > :nth-child(2) > :nth-child(1) {
+  color: #fea116;
+  font-size: 1.5rem;
+  position: relative;
+  font-family: cursive;
+  font-weight: 600;
+}
+
+.child3 > :nth-child(2) > :nth-child(2) {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.child3 > :nth-child(2) > :nth-child(3),
+.child3 > :nth-child(2) > :nth-child(4) {
+  color: rgb(98, 94, 94);
+  letter-spacing: 0.05rem;
+  line-height: 1.3;
+  font-size: 0.95rem;
+  margin-top: 4vh;
+}
+@media screen and (max-width: 1300px) {
+  .child3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .child3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 85%;
+    margin: auto;
+  }
+  .child3 > :nth-child(2) > div > :nth-child(1) > :nth-child(1)::before {
+    content: "|15";
+    position: absolute;
+    left: -80%;
+    top: -30%;
+    font-size: 2.5rem;
+    color: #fea116;
+  }
+  .child3 > :nth-child(2) > div > :nth-child(2) > :nth-child(1)::before {
+    content: "|50";
+    position: absolute;
+    left: -60%;
+    top: -30%;
+    font-size: 2.5rem;
+    color: #fea116;
+  }
+  .child3 > :nth-child(2) > div {
+    display: flex;
+    gap: 20vw;
+    margin-left: 15vh;
+    margin-top: 5vh;
+  }
+}
+@media screen and (max-width: 650px) {
+  .child3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 85%;
+    margin: auto;
+  }
+  .child3 > :nth-child(2) > div > :nth-child(1) > :nth-child(1)::before {
+    content: "|15";
+    position: absolute;
+    left: -70%;
+    top: -10%;
+    font-size: 2rem;
+    color: #fea116;
+  }
+  .child3 > :nth-child(2) > div > :nth-child(2) > :nth-child(1)::before {
+    content: "|50";
+    position: absolute;
+    left: -50%;
+    top: -10%;
+    font-size: 2rem;
+    color: #fea116;
+  }
+  .child3 > :nth-child(2) > div {
+    display: flex;
+    gap: 15vw;
+    margin-left: 15vh;
+    margin-top: 5vh;
+  }
+  .child3 > :nth-child(2) > :nth-child(6) {
+    font-size: 1rem;
+    padding: 01rem 1.5rem;
+    background-color: #fea116;
+    width: 50%;
+    text-align: center;
+    color: #f1f8ff;
+    transition: 0.3s ease;
+    margin-top: 5vh;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 510px) {
+  .child3 > :nth-child(2) > div {
+    display: flex;
+    gap: 0vw;
+    flex-wrap: wrap;
+    margin-left: 15vh;
+    margin-top: 5vh;
+  }
+  .child3 > :nth-child(2) > div > :nth-child(2) > :nth-child(1)::before {
+    content: "|50";
+    position: absolute;
+    left: -57%;
+    top: -10%;
+    font-size: 2rem;
+    color: #fea116;
+  }
+}
+/* child 4 */
+.child4 {
+  margin-top: 25vh;
+}
+.child4 > :nth-child(1) {
+  font-size: 1.2rem;
+  color: #fea116;
+  text-align: center;
+  font-weight: 600;
+  font-family: cursive;
+}
+.child4 > :nth-child(2) {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.child4 > :nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  margin-top: 10vh;
+}
+.child4 > :nth-child(3) > :nth-child(1) {
+  position: absolute;
+  top: -15%;
+  left: 40%;
+  font-size: 3rem;
+  color: #fea116;
+}
+.child4 > :nth-child(3) > :nth-child(2) {
+  color: grey;
+}
+.child4 > :nth-child(3) > :nth-child(3) {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: -3vh;
+}
+.men {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding:  0vh 5vh;
+  place-items: center;
+  margin-top: 10vh;
+}
+.men > :nth-child(1) > div,
+.men > :nth-child(2) > div {
+  display: flex;
+  gap: 2vw;
+}
+.men > :nth-child(1) > div > :nth-child(2),
+.men > :nth-child(2) > div > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.men > :nth-child(1) > div > :nth-child(2) > :nth-child(1),
+.men > :nth-child(2) > div > :nth-child(2) > :nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.men > :nth-child(1) > div > :nth-child(2) > :nth-child(1) > :nth-child(2),
+.men > :nth-child(2) > div > :nth-child(2) > :nth-child(1) > :nth-child(2) {
+  color: #fea116;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.men > :nth-child(1) > div > :nth-child(2) > :nth-child(1) > :nth-child(1),
+.men > :nth-child(2) > div > :nth-child(2) > :nth-child(1) > :nth-child(1) {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.men > :nth-child(1) > div > :nth-child(2) > :nth-child(2),
+.men > :nth-child(2) > div > :nth-child(2) > :nth-child(2) {
+  color: grey;
+}
+@media screen and (max-width:1170px){
+  .men {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding:  0vh 5vh;
+    place-items: center;
+    margin-top: 10vh;
+    gap: 20vh;
+  }
+}
+@media screen and (max-width:1000px){
+  .child4 > :nth-child(3) > :nth-child(1) {
+    display: none;
+  }
+}
+/* child 5 */
+.child5{
+  margin-top: 20vh; 
+}
+.child5>:nth-child(1){
+  color: #fea116;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.child5>:nth-child(2){
+  color: black;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.child5>:nth-child(3){
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  gap: 2vw;
+  padding: 0vh 4vh;
+}
+.child5>:nth-child(3)>div>img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.child5>:nth-child(3)>div{
+display: flex;
+flex-direction: column;
+padding: 2rem 2rem 0.5rem 2rem;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+.child5>:nth-child(3)>div>:nth-child(2){
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2vh;
+}
+.child5>:nth-child(3)>div>:nth-child(3){
+  font-size: 0.9rem;
+  color: grey;
+  margin-top: -3vh;
+}
+.child5>:nth-child(3)>div>:nth-child(4)>i{
+  font-size: 1.2rem;
+  padding: 0.5rem 0.3rem;
+  background-color: #fea116;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  cursor: pointer;
+  display: none;
+  transition: 0.5s ease-in;
+}
+/* Initially hide the icons */
+.child5 > :nth-child(3) > div > :nth-child(4) > i {
+  display: none;
+  opacity: 0; /* Ensure they are not visible at all */
+  transition: opacity 0.3s ease-in;
+}
+
+/* On hover of the individual div, only show the icons for that div */
+.child5 > :nth-child(3) > div:hover > :nth-child(4) > i {
+  display: inline-block; /* Only show the icons for the hovered div */
+  opacity: 1;
+}
+
+/* Optional: Styling for smooth icon appearance */
+.child5 > :nth-child(3) > div {
+  position: relative;
+  transition: transform 0.3s ease-in; /* Optional hover animation */
+}
+
+/* Optional: Add subtle animation when hovered */
+.child5 > :nth-child(3) > div:hover {
+  transform: translateY(-5px); /* Slight upward shift on hover */
+}
+@media screen and (max-width:1170px) 
+
+{.child5> :nth-child(3) {
+  display: block;
+}
+  
+}
+@media screen and (max-width:1170px) 
+
+{.child {
+  align-items: center;
+}
+  
+}
+.child6{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  background-color: black;
+  color: #f1f8ff;
+  padding: 2%;
+  text-align: justify;
+  font-style: italic;
+  
+}
+.child6> :nth-child(1)>:nth-child(1):hover ,.child6> :nth-child(2)>:nth-child(1):hover,.child6> :nth-child(3)>:nth-child(1):hover{
+  cursor: pointer;
+  padding: 2%;
+ 
+  
+}
+.child6> :nth-child(1)>:nth-child(1){
+  color: #fea116;
+  font-size: 2rem;
+  font-weight: bolder;
+  
+}
+.child6> :nth-child(2)>:nth-child(1){
+  color: #fea116;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+  .child6> :nth-child(3)>:nth-child(1){
+    color: #fea116;
+    font-size: 2rem;
+    font-weight: bolder;}
+
+@media screen and (max-width:1170px) {
+  .child6{
+    display: block;
+    justify-content: center;
+    
+  }
+}
+
